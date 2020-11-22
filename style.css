@@ -1,0 +1,88 @@
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
+
+html {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: Bebas Neue, sans-serif;
+  background: whitesmoke;
+  background: #b24592; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #f15f79,
+    #b24592
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #f15f79,
+    #b24592
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+h1 {
+  text-align: center;
+  margin-top: 25px;
+  margin-bottom: 15px;
+  font-size: 40px;
+  letter-spacing: 5px;
+  color: white;
+}
+
+.title {
+  display: flex;
+  justify-content: center;
+}
+
+/* Loader */
+.logoLoader {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(255, 255, 255, 0.8);
+  z-index: 1;
+}
+
+.logoLoader img {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* Image Container */
+.image-container {
+  margin: 10px 30%;
+}
+.image-container img {
+  width: 100%;
+  margin-top: 5px;
+  border-radius: 2%;
+}
+
+.icon {
+  width: 2rem;
+  height: 2rem;
+  margin-top: 0.2rem;
+  align-self: center;
+  padding: 0.5rem;
+}
+
+/* Media Query: Large Smartphone */
+@media screen and (max-width: 600px) {
+  h1 {
+    font-size: 20px;
+  }
+  .image-container {
+    margin: 10px;
+  }
+  .icon {
+    width: 1.2rem;
+    height: 1.2rem;
+    padding: 0.1rem;
+  }
+}
