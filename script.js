@@ -27,6 +27,37 @@ function imageLoaded() {
   }
 }
 
+// Add bootstrap card elements to <img>'s
+function addCard(image){
+  // create elements
+  const card = document.createElement('div');
+  const cardBody = document.createElement('div'); 
+  const like = document.createElement('a'); 
+  const dislike = document.createElement('a');
+
+  // add classes to elements
+  card.classList.add('card');
+  image.classList.add('card-img-top');
+  cardBody.classList.add('card-body');
+  like.classList.add('btn');
+  like.classList.add('btn-light');
+  dislike.classList.add('btn');
+  dislike.classList.add('btn-light');
+  
+
+  // add elements to document
+  card.appendChild(image);
+  card.appendChild(cardBody);
+  cardBody.appendChild(like);
+  cardBody.appendChild(dislike);
+  imageContainer.appendChild(card);
+
+  like.innerHTML = "<img src='thumb-up.png'></img>"
+  dislike.innerHTML = "<img src='thumb-down.png'></img>"
+}
+
+  
+
 //  Helper Function to Set Attributes on DOM Elements
 function setAttributes(element, attributes) {
   for (const key in attributes) {
@@ -40,11 +71,11 @@ function displayPhotos() {
   // Run function for each object in photosArray
   photosArray.forEach((photo) => {
     // Create <a> to link to Unsplash
-    const item = document.createElement("a");
-    setAttributes(item, {
-      href: photo.links.html,
-      target: "_blank",
-    });
+    // const item = document.createElement("a");
+    // setAttributes(item, {
+    //   href: photo.links.html,
+    //   target: "_blank",
+    // });
     // Create <img> for photo
     const img = document.createElement("img");
     setAttributes(img, {
@@ -55,8 +86,8 @@ function displayPhotos() {
     // Event Listener, check when each is finished loading
     img.addEventListener("load", imageLoaded);
     // Put <img> inside <a>, then put both inside imageContainer Element
-    item.appendChild(img);
-    imageContainer.appendChild(item);
+    addCard(img);
+
   });
 }
 
